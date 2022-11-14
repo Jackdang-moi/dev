@@ -1,0 +1,43 @@
+header{
+    /*margin-bottom: 30px;*/
+    /*background-color: #faf;*/
+}
+header > h2 {
+    font-weight: 400;
+    text-align: center;
+    margin: 40px auto 40px auto;
+    margin-bottom: -20px;
+}
+
+header > h1 {
+    text-align: center;
+    margin: 40px auto 40px auto;
+    font-weight: 800;
+}
+
+.user_login {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto 20px auto;
+    /*margin-top: 100px;*/
+    /*background-color: #faa;*/
+    /*box-shadow: 0px 0px 3px 0px black;*/
+
+    padding: 20px;
+}
+.border_15{
+    border-radius: 15px;
+}
+.border_20{
+    border-radius: 20px;
+}
+.border_30{
+    border-radius: 30px;
+}
+
+.user_login > button {
+    background-color: black;
+    width: 80%;
+    margin: 10px auto 10px auto;
+    display: grid;
+}
