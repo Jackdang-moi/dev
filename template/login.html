@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../static/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <body>
@@ -16,17 +17,21 @@
       <h1> 잡담 모의</h1>
     </header>
 
-    <div class="user_login">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control border_15" id="user_id"  placeholder="url">
+    <div class="user_login d-grid gap-2 col-6 mx-auto">
+      <div class="form-floating mb-3" >
+        <input type="text" class="form-control border_radius15" id="user_id"  placeholder="url">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating mb-3" >
-        <input type="password" class="form-control border_20" id="user_pw" placeholder="url">
+        <input type="password" class="form-control border_radius20" id="user_pw" placeholder="url">
         <label for="floatingInput">Password</label>
       </div>
 
-<!--      <button class="btn btn-dark form-control border_15">LOGIN</button>-->
+      <button class="btn-3">LOGIN</button>
+      <div class="signuptext_area">
+         <span>Don't have an account? <a class="signuptext">Sign Up!</a></span>
+      </div>
+
     </div>
   </div>
   </body>
