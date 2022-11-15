@@ -1,3 +1,5 @@
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
 html,
 body,
 div,
@@ -123,7 +125,6 @@ table {
   border-spacing: 0;
 }
 
-@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 * {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
 }
