@@ -25,12 +25,12 @@ img {
 }
 
 .upload_container {
- display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 80%;
-    margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .img_here {
