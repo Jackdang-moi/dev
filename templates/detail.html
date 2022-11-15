@@ -17,8 +17,17 @@
         data: {},
         success: function (res) {
 
-          res.data.slice(0,1).map(data=>{
-               console.log(data)
+        // let strArr = [];
+        //
+        // for (let objKey of res.data) {
+        //     console.log(objKey)
+        //   if(res.hasOwnProperty(objKey)) {
+        //     strArr.push(objKey);
+        //   }
+        // }
+
+         res.data.slice(-1).map(data=>{
+
                 let title = data.title;
                 let img = data.img;
                 let description = data.description;
