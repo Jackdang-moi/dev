@@ -1,0 +1,28 @@
+:root{
+    --border-color:#e6e6e6;
+}
+*{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+.wrap {
+    background: #fdfcfc;
+    width: 1800px;
+    height: 1300px;
+    background-color: #ffa;
+    margin:0 auto;
+}
+    header{
+        width: 100%;
+        height: 200px;
+        background-color: #faa;
+    }
+        header > h1{
+            background-color: #aff;
+            font-size: 45px;
+            font-weight: 800;
+            padding-top: 30px;
+        }
+
+
