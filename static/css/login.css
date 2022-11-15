@@ -13,12 +13,14 @@ header > h2 {
     text-align: center;
     margin: 40px auto 40px auto;
     margin-bottom: -20px;
+    font-size: 30px;
 }
 
 header > h1 {
     text-align: center;
     margin: 40px auto 40px auto;
     font-weight: 800;
+    font-size: 45px;
 }
 
 .user_login {
@@ -90,10 +92,6 @@ button:hover {
 }
 
 .signuptext_area{
-    
+
     margin: 0 auto;
-}
-
-.signuptext{
-
 }
