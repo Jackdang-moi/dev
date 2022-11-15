@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -46,12 +47,51 @@
     })
 </script>
 <body>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/detail.css" />
+    <title>글 상세 페이지</title>
+    <script>
+        $(document).ready(function () {
+
+
+        });
+
+       ㅋ
+      function handleImg(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            document
+              .getElementById("img_view")
+              .setAttribute("src", e.target.result);
+            document.getElementById("img_view").style.display = "block";
+            document.getElementById("img_text").remove();
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      function gotomain(){
+          window.location.href='/'
+      }
+    </script>
+  </head>
+
+  <body>
+
     <div id="wrap">
       <main>
         <div class="logo">
           <h2>잡담모의</h2>
         </div>
         <div class="upload_container">
+
             <form id="upload_form" action="">
 
             </form>
@@ -61,3 +101,4 @@
     </div>
 </body>
 </html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 시작!</title>
+    <link rel="stylesheet" type="text/css" href = "../static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href = "../static/css/signup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+</head>
+<script>
+    function register() {
+    $.ajax({
+        type: "POST",
+        url: "/api/register",
+        data: {
+            // nickname_give: $('#nick'),
+            // id_give: $('#id').val(),
+            // pw_give: $('#pw').val()
+            id_give: $('#userid').val(),
+            pw_give: $('#userpw').val(),
+            nickname_give: $('#usernick').val()
+        },
+        success: function (response) {
+            if (response['result'] == 'success') {
+                alert('회원가입이 완료되었습니다.')
+                window.location.href = '/login'
+            } else {
+                alert(response['msg'])
+            }
+        }
+    })
+}
+
+verifyEmail = function(){
+    let email = $('#userid').val();
+
+    let regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+    if (email.match(regExp) != null){
+        console.log('이메일 형식 확인')
+    } else {
+        alert("옳바른 이메일 형식을 사용해주세요!");
+    }
+}
+
+function check_pw(){
+    let p1 = $('#userpw').val();
+
+    let charac = /^.*(?=^.{6,10}$)(?=.*\d)(?=.*[!@#$%^&+=]).*$/;
+
+    if(p1.match(charac) != null){
+        console.log('비밀번호 형식 확인')
+    } else {
+        alert("비밀번호 규칙을 맞춰주세요!")
+    }
+
+}
+
+function pw_test(){
+    let p1 = document.getElementById('pw').value;
+    let p2 = document.getElementById('confirm').value;
+
+    if (p1 != p2) {
+        alert("비밀번호가 일치하지 않습니다!");
+        return false;
+    } else {
+        alert("비밀번호가 일치합니다.");
+        return true;
+    }
+}
+</script>
+<body>
+    <div class="banner">
+        <h1>잡담을 모의해주세요!</h1>
+    </div>
+    <div class="fields">
+        <p><input id="usernick" type="text" placeholder="Nickname"> </p>
+        <p><input id="userid" type="email" placeholder="E-mail" onchange="verifyEmail()"> </p>
+        <p><input id="userpw" type="password" placeholder="Password" onchange="check_pw()"> </p>
+        <p>비밀번호는 숫자와 특수문자를 포함한 6~10자로 설정해주세요. </p>
+        <p><input id="confirm" type="password" placeholder="Confirm Password" onchange="pw_test()"> </p>
+        <button onclick="register()"><strong>Sign Up!</strong></button>
+    </div>
+    <br>
+    <div>
+        Already a member? <a href="/login" class="login">Login</a>
+    </div>
+
+</body>
+</html>
