@@ -1,22 +1,30 @@
 :root{
     --border-color:#e6e6e6;
 }
-*{
+*,a{
     list-style: none;
     text-decoration: none;
     color: black;
 }
+a:hover{
+    color: black;
+}
 .wrap {
     background: #fdfcfc;
-    width: 1800px;
-    height: 1300px;
+
+    width: 100%;
+    height: 1800px;
     background-color: #ffa;
-    margin:0 auto;
+        /*margin:0 auto;*/
 }
     header{
+
         width: 100%;
         height: 200px;
         background-color: #faa;
+        position: fixed;
+        top: 0;
+        z-index: 50;
     }
         header > h1{
             background-color: #aff;
@@ -24,5 +32,38 @@
             font-weight: 800;
             padding-top: 30px;
         }
+        .write_btn{
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
 
+        }
+.logo{
+    cursor: pointer;
 
+}
+
+.content{
+    margin-top: 200px;
+
+    width: 100%;
+
+    background-color: #afa;
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+}
+.content > ul{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.content > ul > li{
+    width: 400px;
+    height: 300px;
+    background-color: #ffaaaa;
+    /*display: block;*/
+    /*float: left;*/
+
+}
