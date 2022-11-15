@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/upload.css" />
     <title>업로드 페이지</title>
     <style>
       #wrap {
@@ -97,8 +98,21 @@
       .submit_btn_conatiner {
         display: flex;
         justify-content: flex-end;
-        cursor: pointer;
+
       }
+      .btn {
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    min-width: 100px;
+    box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit_btn{
+    margin-right: 15px;
+}
     </style>
     <script>
       function handleImg(input) {
@@ -113,6 +127,10 @@
           };
           reader.readAsDataURL(input.files[0]);
         }
+      }
+
+      function gotomain(){
+          window.location.href='/'
       }
     </script>
   </head>
@@ -148,7 +166,8 @@
                 placeholder="글을 작성해주세요"
               ></textarea>
               <div class="submit_btn_conatiner">
-                <button class="submit_btn" type="button">업로드</button>
+                <button class="submit_btn btn" type="button">업로드</button>
+                <button class="callback_btn btn" type="button" onclick="gotomain()">목록으로</button>
               </div>
             </div>
           </form>
