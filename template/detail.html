@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="../static/css/detail.css" />
     <title>글 상세 페이지</title>
     <script>
+        $(document).ready(function () {
+
+
+        });
+
+        function detail_view_get(){
+
+
+        }
+
       function handleImg(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -21,7 +31,7 @@
         }
       }
 
-      function callback(){
+      function gotomain(){
           window.location.href='/'
       }
     </script>
@@ -51,7 +61,7 @@
 
               <div class="submit_btn_conatiner">
                 <button class="update_btn btn" type="button">수정하기</button>
-                <button class="callback_btn btn" type="button" onclick="callback()">목록으로</button>
+                <button class="callback_btn btn" type="button" onclick="gotomain()">목록으로</button>
 <!--                  <a class="callback_btn btn" type="button" href="/">목록으로</a>-->
               </div>
             </div>
