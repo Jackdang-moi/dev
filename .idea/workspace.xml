@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0ffe06b-d812-498d-a148-13a2e0266131" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/landing.html" afterDir="false" />
-    </list>
+    <list default="true" id="d0ffe06b-d812-498d-a148-13a2e0266131" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/연습/1주차" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/dev/template/index.html" useBuiltInWebServerPort="true">
@@ -88,6 +84,7 @@
       <workItem from="1668480761544" duration="56000" />
       <workItem from="1668480869663" duration="2202000" />
       <workItem from="1668487775338" duration="82000" />
+      <workItem from="1668490700368" duration="254000" />
     </task>
     <servers />
   </component>
@@ -104,5 +101,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
