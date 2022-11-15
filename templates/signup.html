@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 시작!</title>
+    <link rel="stylesheet" type="text/css" href = "../static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href = "../static/css/signup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="../static/JS/signup.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <h1>잡담을 모의해주세요!</h1>
+    </div>
+    <div class="fields">
+        <p><input id="nick" type="text" placeholder="Nickname"> </p>
+        <p><input id="id" type="email" placeholder="E-mail" onchange="verifyEmail()"> </p>
+        <p><input id="pw" type="password" placeholder="Password" onchange="check_pw()"> </p>
+        <p>비밀번호는 숫자와 특수문자를 포함한 6~10자로 설정해주세요. </p>
+        <p><input id="confirm" type="password" placeholder="Confirm Password" onchange="pw_test()"> </p>
+        <button onclick="register()"><strong>Sign Up!</strong></button>
+    </div>
+    <br>
+    <div>
+        Already a member? <a href="/login" class="login">Login</a>
+    </div>
+    
+</body>
+</html>
