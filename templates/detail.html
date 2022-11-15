@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/upload.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    $.ajax({
+        type: "GET",
+        url: "/detail",
+        data: {},
+        success: function (res) {
+
+          res.data.slice(0,1).map(data=>{
+               console.log(data)
+                let title = data.title;
+                let img = data.img;
+                let description = data.description;
+                let html = `
+                <div class="img_container">
+                <img id="img_view" src="https://img.sbs.co.kr/newsnet/etv/upload/2022/09/19/30000790950_1280.jpg" alt="" />
+                </div>
+                <div class="input_field_conatiner">
+                    <h2 class="detail_title">${title}</h2>
+                    <div id="text_board">
+                        ${description}
+                    </div>
+                    <div class="submit_btn_conatiner">
+                          <button class="submit_btn" type="button" onclick="send()">돌아가기</button>
+                    </div>
+                </div>
+                `
+              let upload_container = document.getElementById('upload_form')
+                upload_container.insertAdjacentHTML("beforeend", html)
+           })
+
+
+
+        }
+    })
+</script>
+<body>
+    <div id="wrap">
+      <main>
+        <div class="logo">
+          <h2>잡담모의</h2>
+        </div>
+        <div class="upload_container">
+            <form id="upload_form" action="">
+
+            </form>
+        </div>
+
+      </main>
+    </div>
+</body>
+</html>
