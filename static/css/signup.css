@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 100px;
+}
+.banner{
+    font-size: 2.5em;
+    margin: 50px auto 40px auto;
+}
+.fields >p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: x-small;
+    color: darkgray;
+}
+.fields > p> input {
+    padding: 15px;
+    width: 220px;
+    border-radius: 15px;
+    margin: 10px auto 10px auto;
+}
+
+#confirm{
+    margin-top: 20px;
+}
+.fields > button {
+    background-color: beige;
+    padding: 10px;
+    width: 255px;
+    border-radius: 15px;
+    margin: 40px auto 20px auto;
+
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+button:hover{
+    cursor: pointer;
+}
+.login {
+    font-weight: 800;
+}
+a:hover{
+    cursor: pointer;
+}
