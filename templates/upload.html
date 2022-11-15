@@ -1,0 +1,179 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/upload.css" />
+    <title>업로드 페이지</title>
+    <style>
+      #wrap {
+        height: 100vh;
+        background: #fdfcfc;
+      }
+      #wrap main {
+        height: 100%;
+        padding: 30px;
+        box-sizing: border-box;
+        position: relative;
+      }
+      .logo {
+        margin: 30px 20px;
+      }
+      .logo h2 {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .upload_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img_label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+        box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 30%);
+        border: 1px solid #d1d1d1;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+      .img_container {
+        max-width: 500px;
+        width: 100%;
+        height: 300px;
+      }
+      .img_label img {
+        width: 100%;
+        object-fit: cover;
+        background-position: center;
+        height: 100%;
+        display: none;
+      }
+      #img_text {
+        color: #b1b1b1;
+      }
+      .input_field_conatiner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 680px;
+        gap: 20px 0;
+      }
+      .input_field_conatiner input[type="text"] {
+        height: 35px;
+        border: 1px solid #919191;
+        border-radius: 3px;
+        text-indent: 10px;
+        outline: none;
+      }
+      #upload_textarea {
+        border-radius: 3px;
+        resize: none;
+        padding: 10px;
+        box-sizing: border-box;
+        outline: none;
+        border-color: #919191;
+      }
+      .submit_btn {
+        border: 1px solid #d1d1d1;
+        background: #fff;
+        min-width: 100px;
+        box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 30%);
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .submit_btn_conatiner {
+        display: flex;
+        justify-content: flex-end;
+
+      }
+      .btn {
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    min-width: 100px;
+    box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit_btn{
+    margin-right: 15px;
+}
+    </style>
+    <script>
+      function handleImg(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            document
+              .getElementById("img_view")
+              .setAttribute("src", e.target.result);
+            document.getElementById("img_view").style.display = "block";
+            document.getElementById("img_text").remove();
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+
+      function gotomain(){
+          window.location.href='/'
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <main>
+        <div class="logo">
+          <h2>잡담모의</h2>
+        </div>
+        <div class="upload_container">
+          <form action="">
+            <div class="img_container">
+              <label class="img_label" for="upload_btn">
+                <img id="img_view" src="" alt="" />
+                <span id="img_text">사진을 업로드해주세요.</span>
+              </label>
+              <input
+                id="upload_btn"
+                accept=".jpg,.png"
+                type="file"
+                hidden=""
+                onchange="handleImg(this)"
+              />
+            </div>
+            <div class="input_field_conatiner">
+              <input type="text" placeholder="제목을 작성해주세요" />
+              <textarea
+                id="upload_textarea"
+                name=""
+                cols="30"
+                rows="10"
+                placeholder="글을 작성해주세요"
+              ></textarea>
+              <div class="submit_btn_conatiner">
+                <button class="submit_btn btn" type="button">업로드</button>
+                <button class="callback_btn btn" type="button" onclick="gotomain()">목록으로</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <!-- Code injected by live-server -->
+  </body>
+</html>
