@@ -3,7 +3,7 @@ function register() {
         type: "POST",
         url: "/api/member",
         data: {
-            nick_give: $('#nick'),
+            nick_give: $('#nick').val(),
             id_give: $('#id').val(),
             pw_give: $('#pw').val()
         },

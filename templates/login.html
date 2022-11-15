@@ -21,7 +21,7 @@
           url: "/api/login",
           data: {id_give: $('#userid').val(), pw_give: $('#userpw').val()},
           success: function (response) {
-            console.log(response)
+
             if (response['result'] == 'success') {
               // 로그인이 정상적으로 되면, 토큰을 받아옵니다.
               // 이 토큰을 mytoken이라는 키 값으로 쿠키에 저장합니다.
@@ -37,7 +37,6 @@
         });
 
       }
-
 
 
     </script>
@@ -62,7 +61,7 @@
 
       <button class="btn-3" onclick="login()">LOGIN</button>
       <div class="signuptext_area">
-         <span>Don't have an account? <a class="signuptext" href="/register">Sign Up!</a></span>
+         <span>Don't have an account? <a class="signuptext" href="/member">Sign Up!</a></span>
       </div>
 
     </div>
