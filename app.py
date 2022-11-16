@@ -103,6 +103,17 @@ def api_member():
     pw_receive = request.form['pw_give']
     nickname_receive = request.form['nick_give']
 
+    if db.user.find_one({'id':id_receive}):
+        return jsonify({'msg': '이미 사용중인 e-mail입니다.'})
+    elif db.user.find_one({'nick':nickname_receive}):
+        return jsonify({'msg': '이미 사용중인 닉네임 입니다.'})
+    elif nickname_receive =="":
+        return jsonify({'msg': '닉네임을 입력해주세요.'})
+    elif id_receive =="":
+        return jsonify({'msg': 'e-mail을 입력해주세요.'})
+    elif pw_receive =="":
+        return jsonify({'msg': '비밀번호를 입력해주세요.'})
+
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
     db.user.insert_one({'id': id_receive, 'pw': pw_hash, 'nick': nickname_receive})

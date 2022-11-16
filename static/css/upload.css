@@ -1,6 +1,9 @@
 :root {
   --border-color: #606060;
 }
+#wrap::-webkit-scrollbar {
+  display: none;
+}
 #wrap {
   height: 100vh;
   overflow-y: scroll;
