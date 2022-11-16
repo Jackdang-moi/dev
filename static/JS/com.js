@@ -14,16 +14,23 @@ function listing() {
         let title = rows[i]["title"];
         let description = rows[i]["description"];
         let order = rows[i]["order"];
-        let temp_html = `<ul>
+        let temp_html = `
                                     <li>
                                        <div class="image"><img src="${image}"></div>
-                                       <div class="title"><h5>${title}</h5></div>
-                                       <div class="description">${description}</div>
-                                       <div><a href="/detail/${order}">글 상세보기</a></div>
+                                       <div class="content-container">
+                                            <div class="title"><h5>${title}</h5></div>
+                                            <div class="description">${description}</div>
+                                            
+                                       </div>
                                     </li>
-                                 </ul>`;
-        $("#card").append(temp_html);
+                               `;
+        $(".card_inner").append(temp_html);
       }
     },
   });
+}
+
+function logout() {
+  $.removeCookie("mytoken");
+  window.location.href = "/";
 }

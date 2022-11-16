@@ -9,6 +9,7 @@ import certifi
 ca=certifi.where()
 
 
+client = MongoClient('mongodb+srv://test:sparta@cldbspartauster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 
 db = client.dbsparta
 
@@ -130,7 +131,7 @@ def api_login():
         # exp에는 만료시간을 넣어줍니다. 만료시간이 지나면, 시크릿키로 토큰을 풀 때 만료되었다고 에러가 납니다.
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=5)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=1000)
         }
 
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')

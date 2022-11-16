@@ -1,54 +1,146 @@
-.header{
-    position: sticky;
-    top: 0;
-    background-color: lightgoldenrodyellow;
-    height: 150px;
+/* @import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+.spoka * {
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+} */
+:root {
+  --text-color: #fff;
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
+}
+body {
+  background: #252525;
+}
+* {
+  font-family: "San Francisco";
+  color: var(--text-color);
+}
+#wrap {
+  display: flex;
+  position: relative;
+}
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #171717;
+  border-right: 0.1px solid dimgrey;
+  position: fixed;
+  left: 0;
 }
 
 .header > h1 {
-    font-size: 2rem;
-    font-weight: 800;
+  font-size: 2rem;
+  font-weight: 800;
 
-    height: 100px;
+  height: 100px;
 
-    position: absolute;
-    top: 50px;
-    left: 50px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }
 
-.btn{
-    position: absolute;
-    top: 80px;
-    right: 30px;
-    padding: 10px 30px 10px 30px;
-
-    font-size: 1rem;
-    border-radius: 10px;
-    border: 1px solid black;
-    cursor: pointer;
-    background-color: beige;
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-left: 250px;
 }
 
-.card{
-    justify-content: space-evenly;
-    text-align: center;
+.card > ul > li {
+  list-style-type: none;
+  display: inline-block;
+  height: 500px;
+
+  border-radius: 15px;
+
+  border: 1px solid dimgrey;
 }
 
-.card > ul >li{
-    list-style-type: none;
-    display: inline-block;
-    margin: 50px;
+.btn {
+  padding: 10px 30px 10px 30px;
 
-    height: 500px;
-    width: 450px;
-    border-radius: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: beige;
+}
+btn:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.image img {
+  width: 100%;
+}
 
-    border: 1px solid black;
+.card_inner {
+  rid-template-columns: 1fr;
+  display: grid;
+  gap: 50px;
+  max-width: 450px;
+  padding: 50px;
+  box-sizing: border-box;
 }
-btn:hover{
-    cursor: pointer;
+
+.logo {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-a{
-    text-decoration: none;
-    color: black;
+.logo h1 a {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px 0;
+}
+nav ul li {
+  display: inline-block;
+
+  width: 100%;
+  text-align: center;
+  max-width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+nav ul li a {
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+}
+.content-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  gap: 15px 0;
+}
+
+.logout_btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: 1px solid #6c6666;
+  padding: 8px 15px;
+  width: 80px;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.logout_btn:active {
+  background: #383838;
 }
