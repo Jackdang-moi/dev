@@ -12,6 +12,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .logo {
   margin: 30px 20px;
@@ -27,7 +28,7 @@
   width: fit-content;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   border: 0.1px solid #606060;
   border-radius: 10px;
