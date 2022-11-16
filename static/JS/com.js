@@ -14,10 +14,11 @@ function listing() {
         let title = rows[i]["title"];
         let description = rows[i]["description"];
         let order = rows[i]["order"];
+
         let temp_html = `
                                     <li>
-                                       <div class="image"><img src="${image}"></div>
-                                       <div class="content-container">
+                                       <div class="image"><img src="${image}" onclick="window.location.href='/detail/${order}'"></div>
+                                       <div class="content_container">
                                             <div class="title"><h5>${title}</h5></div>
                                             <div class="description">${description}</div>
                                             

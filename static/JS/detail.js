@@ -10,13 +10,13 @@ function handleUpload() {
     url: "/detail",
     data: {},
     success: function (res) {
-      // console.log(res.data[page_num -1])
       res.data.map((data) => {
         if (page_num == data.order) {
           let title = data.title;
           let img = data.img;
           console.log(page_num, res.data.order, img);
           let description = data.description;
+          
           html = `
                         <div class="img_container">
                         <img id="img_view" src="${img}" alt="" />

@@ -4,6 +4,8 @@
 } */
 :root {
   --text-color: #fff;
+  --board-border-color: #323232;
+  --board-content-color: #dadada;
 }
 
 @font-face {
@@ -12,7 +14,7 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-ultralight-webfont.woff");
 }
 body {
-  background: #252525;
+  background: #171616;
 }
 * {
   font-family: "San Francisco";
@@ -25,8 +27,8 @@ body {
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #171717;
-  border-right: 0.1px solid dimgrey;
+  background-color: #0c0c0c;
+  border-right: 0.1px solid var(--board-border-color);
   position: fixed;
   left: 0;
 }
@@ -53,11 +55,9 @@ body {
 .card > ul > li {
   list-style-type: none;
   display: inline-block;
-  height: 500px;
-
-  border-radius: 15px;
-
-  border: 1px solid dimgrey;
+  height: 350px;
+  border-radius: 4px;
+  border: 1px solid var(--board-border-color);
 }
 
 .btn {
@@ -77,11 +77,15 @@ a {
 }
 .image img {
   width: 100%;
+  max-height: 210px;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .card_inner {
-  rid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   display: grid;
+  width: 370px;
   gap: 50px;
   max-width: 450px;
   padding: 50px;
@@ -117,8 +121,8 @@ nav ul li {
 nav ul li a {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
 }
-.content-container {
-  height: 100%;
+.content_container {
+  height: calc(100% - 210px);
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -126,7 +130,13 @@ nav ul li a {
   align-items: flex-start;
   gap: 15px 0;
 }
-
+.content_container .description {
+  color: var(--board-content-color);
+  font-size: 13px;
+}
+.title h5 {
+  font-size: 14px;
+}
 .logout_btn {
   position: absolute;
   bottom: 20px;
