@@ -8,8 +8,7 @@ import certifi
 
 ca=certifi.where()
 
-client = MongoClient('mongodb+srv://test:sparta@cluster0.itbv7ku.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
-db = client.dbsparta
+
 
 
 # JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
