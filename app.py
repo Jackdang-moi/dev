@@ -6,10 +6,9 @@ app = Flask(__name__)
 from pymongo import MongoClient
 import certifi
 
-ca=certifi.where()
+ca = certifi.where()
 
 # =============================mongoDB 주소란======================================
-
 
 
 # ================================================================================
@@ -57,6 +56,7 @@ def home():
 def get_path(path):
     return render_template(path + '.html')
 
+
 @app.route('/detail/<path>')
 def get_path_detail(path):
     return render_template('detail.html')
@@ -76,10 +76,8 @@ def send_data():
     order_lists = list(db.upload.find({}, {'_id': False}))
     order = len(order_lists) + 1
 
-
-    db.upload.insert_one({'img': upload_img, 'title': upload_title, 'description': upload_description,'order': order})
+    db.upload.insert_one({'img': upload_img, 'title': upload_title, 'description': upload_description, 'order': order})
     return jsonify({'result': 'SUCCESS', 'message': 'SIGN UP SUCCESS'})
-
 
 
 @app.route('/login')
@@ -88,7 +86,7 @@ def login():
     return render_template('login.html', msg=msg)
 
 
-@app.route('/member') # 유저정보를 저정하는 함수
+@app.route('/member')  # 유저정보를 저정하는 함수
 def member():
     return render_template('signup.html')
 
@@ -105,17 +103,20 @@ def api_member():
     id_receive = request.form['id_give']
     pw_receive = request.form['pw_give']
     nickname_receive = request.form['nick_give']
+    confirm_receive = request.form['confirm_give']
 
-    if db.user.find_one({'id':id_receive}):
+    if db.user.find_one({'id': id_receive}):
         return jsonify({'msg': '이미 사용중인 e-mail입니다.'})
-    elif db.user.find_one({'nick':nickname_receive}):
+    elif db.user.find_one({'nick': nickname_receive}):
         return jsonify({'msg': '이미 사용중인 닉네임 입니다.'})
-    elif nickname_receive =="":
+    elif nickname_receive == "":
         return jsonify({'msg': '닉네임을 입력해주세요.'})
-    elif id_receive =="":
+    elif id_receive == "":
         return jsonify({'msg': 'e-mail을 입력해주세요.'})
-    elif pw_receive =="":
+    elif pw_receive == "":
         return jsonify({'msg': '비밀번호를 입력해주세요.'})
+    elif confirm_receive == "":
+        return jsonify({'msg': '비밀번호를 확인해주세요.'})
 
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
@@ -157,6 +158,7 @@ def api_login():
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
     return response, 200  # 서버가 제대로 요청을 처리했다는 성공
 
+
 # [유저 정보 확인 API]
 # 로그인된 유저만 call 할 수 있는 API입니다.
 # 유효한 토큰을 줘야 올바른 결과를 얻어갈 수 있습니다.
@@ -173,7 +175,6 @@ def api_valid():
         # 보실 수 있도록 payload를 print 해두었습니다. 우리가 로그인 시 넣은 그 payload와 같은 것이 나옵니다.
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
 
-
         # payload 안에 id가 들어있습니다. 이 id로 유저정보를 찾습니다.
         # 여기에선 그 예로 닉네임을 보내주겠습니다.
         userinfo = db.user.find_one({'id': payload['id']}, {'_id': 0})
@@ -185,11 +186,6 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
 
 
-
 # 맥을 사용중이라면 포트를 변경하셔야 할 수도 있습니다!
 if __name__ == '__main__':
-
     app.run('0.0.0.0', port=5000, debug=True)
-
-
-
