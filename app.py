@@ -12,9 +12,7 @@ ca=certifi.where()
 client = MongoClient('mongodb+srv://test:sparta@cldbspartauster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 
 db = client.dbsparta
-# 주석
-# 주석
-# 주석
+
 # JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
 # 이 문자열은 서버만 알고있기 때문에, 내 서버에서만 토큰을 인코딩(=만들기)/디코딩(=풀기) 할 수 있습니다.
 SECRET_KEY = 'SPARTA'
