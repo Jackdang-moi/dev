@@ -10,6 +10,7 @@ function handleImg(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
 function send() {
   let img = document.getElementById("img_view").src;
   let title = document.getElementById("upload_title").value;
@@ -24,8 +25,7 @@ function send() {
       upload_description: description,
     },
     success: function (res) {
-      console.log(res);
-      window.location.href = "/api/detail";
+      window.location.href = "/";
     },
   });
 }

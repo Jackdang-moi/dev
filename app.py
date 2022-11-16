@@ -8,7 +8,8 @@ import certifi
 
 ca=certifi.where()
 
-client = MongoClient('mongodb+srv://test:sparta@cluster0.itbv7ku.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:sparta@cldbspartauster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+
 db = client.dbsparta
 
 
@@ -51,6 +52,9 @@ def home():
 def get_path(path):
     return render_template(path + '.html')
 
+@app.route('/detail/<path>')
+def get_path_detail(path):
+    return render_template('detail.html')
 
 
 @app.route("/detail", methods=['GET'])
@@ -64,10 +68,11 @@ def send_data():
     upload_img = request.form['upload_img']
     upload_title = request.form['upload_title']
     upload_description = request.form['upload_description']
+    order_lists = list(db.upload.find({}, {'_id': False}))
+    order = len(order_lists) + 1
 
 
-    # if db.user.count_documents({'user_id': user_id}) == 0:
-    db.upload.insert_one({'img': upload_img, 'title': upload_title, 'description': upload_description})
+    db.upload.insert_one({'img': upload_img, 'title': upload_title, 'description': upload_description,'order': order})
     return jsonify({'result': 'SUCCESS', 'message': 'SIGN UP SUCCESS'})
 
 
@@ -162,6 +167,7 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg': '로그인 시간이 만료되었습니다.'})
     except jwt.exceptions.DecodeError:
         return jsonify({'result': 'fail', 'msg': '로그인 정보가 존재하지 않습니다.'})
+
 
 
 if __name__ == '__main__':
