@@ -9,12 +9,14 @@
   overflow-y: scroll;
 }
 #wrap main {
-  min-height: 100vh;
-  background: #0c0c0c;
-  padding: 30px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+    padding: 30px;
+    background: #0c0c0c;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 .logo {
   margin: 30px 20px;

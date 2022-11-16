@@ -5,8 +5,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 #wrap {
-  height: 100vh;
-  overflow-y: scroll;
+
 }
 #wrap main {
   padding: 30px;
@@ -16,6 +15,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height:100vh;
 }
 .logo {
   margin: 30px 20px;
