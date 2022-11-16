@@ -16,11 +16,12 @@ function handleUpload() {
           let img = data.img;
           console.log(page_num, res.data.order, img);
           let description = data.description;
-          
+
           html = `
                         <div class="img_container">
                         <img id="img_view" src="${img}" alt="" />
                         </div>
+                       
                         <div class="input_field_conatiner">
                             <h2 class="detail_title">${title}</h2>
                             <div id="text_board">
