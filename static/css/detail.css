@@ -2,12 +2,12 @@
   --border-color: #e6e6e6;
 }
 #wrap {
-  background: #171616;
   height: 100vh;
   overflow-y: scroll;
 }
 #wrap main {
   padding: 30px;
+  background: #0c0c0c;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -23,6 +23,7 @@
 }
 
 .upload_container {
+  background: #171616;
   width: fit-content;
   display: flex;
   align-items: center;
