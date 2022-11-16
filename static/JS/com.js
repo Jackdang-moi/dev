@@ -19,8 +19,10 @@ function listing() {
                                     <li>
                                        <div class="image"><img src="${image}" onclick="window.location.href='/detail/${order}'"></div>
                                        <div class="content_container">
-                                            <div class="title"><h5>${title}</h5></div>
-                                            <div class="description">${description}</div>
+                                            <span class="title">${title}</span>
+                                            <span class="description">
+                                                ${description}
+                                            </span>
                                             
                                        </div>
                                     </li>
