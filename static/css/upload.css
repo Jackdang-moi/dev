@@ -6,6 +6,7 @@
   overflow-y: scroll;
 }
 #wrap main {
+  min-height: 100vh;
   background: #0c0c0c;
   padding: 30px;
   box-sizing: border-box;
@@ -26,7 +27,7 @@
   background: #171616;
   max-width: 700px;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   border: 0.1px solid #606060;
   border-radius: 10px;
