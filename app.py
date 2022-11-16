@@ -8,9 +8,11 @@ import certifi
 
 ca=certifi.where()
 
+# =============================mongoDB 주소란======================================
 
-client = MongoClient('mongodb+srv://test:sparta@cldbspartauster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 
+
+# ================================================================================
 db = client.dbsparta
 
 # JWT 토큰을 만들 때 필요한 비밀문자열입니다. 아무거나 입력해도 괜찮습니다.
@@ -40,12 +42,15 @@ def home():
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
 
         user_info = db.user.find_one({"id": payload['id']})
+        # return render_template('com.html', nickname=user_info["nick"])
         return render_template('com.html')
 
     except jwt.ExpiredSignatureError:
-        return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
+        # return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
+        return redirect(url_for("login"))
     except jwt.exceptions.DecodeError:
-        return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+        # return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+        return redirect(url_for("login"))
 
 
 @app.route('/api/<path>')
@@ -140,7 +145,7 @@ def api_login():
         # exp에는 만료시간을 넣어줍니다. 만료시간이 지나면, 시크릿키로 토큰을 풀 때 만료되었다고 에러가 납니다.
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=1000)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=10)
         }
 
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
@@ -181,7 +186,8 @@ def api_valid():
 
 
 
+# 맥을 사용중이라면 포트를 변경하셔야 할 수도 있습니다!
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5500, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
 
 
