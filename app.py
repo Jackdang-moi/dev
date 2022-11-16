@@ -9,7 +9,6 @@ import certifi
 ca=certifi.where()
 
 
-client = MongoClient('mongodb+srv://test:sparta@cldbspartauster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 
 db = client.dbsparta
 
