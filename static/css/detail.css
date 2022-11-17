@@ -163,3 +163,15 @@ body::-webkit-scrollbar {
 .comment_container button {
   min-width: 80px;
 }
+#commentList_container {
+  width: 100%;
+}
+.reple_comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  color: #fff;
+}
+
+.reple_user {
+}

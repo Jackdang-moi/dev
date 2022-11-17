@@ -87,16 +87,29 @@ def send_data():
 
 @app.route('/detail/<path>', methods=['POST'])
 def send_comment(path):
-    path = request.form['give_path']
-    comment = request.form['comment_description']
-    token_receive = request.cookies.get('mytoken')
-    payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-    user_info = db.user.find_one({"id": payload['id']})
-    nick_name = user_info['nick']
+    try:
 
-    db.comment.insert_one({'order': path,'comment': comment, 'nick': nick_name})
+        path = request.form['give_path']
+        comment = request.form['comment_description']
+        token_receive = request.cookies.get('mytoken')
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        user_info = db.user.find_one({"id": payload['id']})
+        nick_name = user_info['nick']
+        db.comment.insert_one({'order': path, 'comment': comment, 'nick': nick_name})
 
-    return jsonify({'result': 'SUCCESS'})
+        return jsonify({'result': 'SUCCESS'})
+
+
+    except jwt.ExpiredSignatureError:
+        # return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
+        return redirect(url_for("login"))
+    except jwt.exceptions.DecodeError:
+        # return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
+        return redirect(url_for("login"))
+
+
+
+
 
 
 

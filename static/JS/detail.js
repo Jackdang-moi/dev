@@ -10,14 +10,22 @@ function handleUpload() {
     url: "/detail",
     data: {},
     success: function (res) {
-      console.log(res)
+    console.log(res)
       res.data.map((data) => {
         if (page_num == data.order) {
 
           let title = data.title;
           let img = data.img;
-          console.log(page_num, res.data.order, img);
+
           let description = data.description;
+           let nick;
+           let comment;
+          res.comment.map(data=>{
+             nick = data.nick;
+             comment = data.comment;
+          })
+
+
 
           html = `
                         <div class="img_container">
@@ -33,14 +41,18 @@ function handleUpload() {
                         </div>
                         <div class="comment_form">
                         <span class="comment_title">댓글란</span>
-                        <span id="commentList_container">
-                            <span class="reple_comment"></span>
-                        </span>
+                       
                         <div class="comment_container">
                           <textarea id="comment_textarea" name="" id="" cols="30" rows="10"></textarea>
                           <button type="button" id="submit_comment_btn" type="button" onclick="comment_upload()">등록</button>
                         </div>
                       </div>
+                       <div id="commentList_container">
+                            <span class="reple_comment">
+                                <span class="reple_user">${nick}</span>
+                                <div class="reple_content">${comment}</div>     
+                            </span>
+                        </div>
                       <div class="submit_btn_conatiner">
                                   <button class="submit_btn" type="button" onclick=window.location.href="/">돌아가기</button>
                             </div>
@@ -63,7 +75,7 @@ function comment_upload() {
     url: `${path}`,
     data: { comment_description: comment ,give_path:path},
     success: function (res) {
-      console.log(res);
+       window.location.href = path;
     },
   });
 }
