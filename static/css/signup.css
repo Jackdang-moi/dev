@@ -1,60 +1,121 @@
-body{
+
+.img {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    width: 90%;
+    margin-left: 160px;
+}
+
+hr {
+    width: 75%;
+}
+
+.back {
+    color: #3B3C36;
+
+    border: 1px solid #323232;
+    width: 500px;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+
+}
+
+.banner {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin: 50px auto 40px auto;
+    font-weight: 800;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    margin-top: 100px;
 }
-.banner{
-    font-size: 2.5em;
-    margin: 50px auto 40px auto;
-}
-.fields >p {
+
+.fields > p {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     font-size: x-small;
-    color: darkgray;
+    color: #3B3C36;
+    letter-spacing: 1px;
 }
-.fields > p> input {
+
+.fields > p > input {
     padding: 15px;
     width: 220px;
-    border-radius: 15px;
+    border-radius: 10px;
+    border: 1px solid #323232;
     margin: 10px auto 10px auto;
 }
 
-#confirm{
-    margin-top: 20px;
+#confirm {
+    margin-top: 12px;
 }
+
 .fields > button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: beige;
+    background-color: #414A4C;
+    color: whitesmoke;
+    border: 1px solid #808080;
     padding: 10px;
     width: 255px;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 40px auto 20px auto;
 
     font-weight: 800;
     font-size: 1.2rem;
+    letter-spacing: 2px;
 }
-button:hover{
+
+button:hover {
     cursor: pointer;
 }
+
 .login {
     font-weight: 800;
 }
-a{
+
+.txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3B3C36;
+    letter-spacing: 2px;
+
+    border: 1px solid #323232;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+
+    padding: 20px 145px 20px 145px;
+}
+
+a {
     list-style: none;
-    color: black;
+    color: #15e868;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     cursor: pointer;
 }

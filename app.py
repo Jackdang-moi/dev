@@ -9,7 +9,11 @@ import certifi
 ca = certifi.where()
 
 # =============================mongoDB 주소란======================================
-
+client = MongoClient(
+    'mongodb://test:sparta@ac-xrfxwbs-shard-00-00.3oqrgfu.mongodb.net:27017,ac-xrfxwbs-shard-00-01.3oqrgfu.mongodb.net:27017,ac-xrfxwbs-shard-00-02.3oqrgfu.mongodb.net:27017/?ssl=true&replicaSet=atlas-8rq53x-shard-0&authSource=admin&retryWrites=true&w=majority',
+    tlsCAFile = ca
+)
+db = client.sparta2
 
 # ================================================================================
 db = client.dbsparta
