@@ -53,17 +53,20 @@ function handleUpload() {
           upload_container.insertAdjacentHTML("beforeend", html);
           let nick;
           let comment;
+
           console.log(page_num);
           res.comment.map((data) => {
             if (window.location.pathname == data.order) {
               nick = data.nick;
               comment = data.comment;
               let html = `
+
             <span class="reple_comment_container">
             <span class="reple_user">${nick}</span>
             <div class="reple_content">${comment}</div>     
             </span>
             `;
+
               $(".comment_inner").append(html);
             }
           });
