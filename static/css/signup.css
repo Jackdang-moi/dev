@@ -1,0 +1,123 @@
+body {
+    background-color: rgba(221, 222, 224);
+    background-image: url("../img/bubble.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: right 25% bottom 120%;
+}
+
+hr {
+    width: 90%;
+    border-style:solid;
+    border-color: white;
+    border-width: 1px 0px 0px px;
+}
+
+.back {
+    color: #3B3C36;
+    width: 500px;
+
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+
+}
+
+.banner {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    margin: 50px auto 40px auto;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fields > p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: x-small;
+    color: #3B3C36;
+    letter-spacing: 1px;
+}
+
+.fields > p > input {
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px gray;
+    margin: 10px auto 10px auto;
+}
+
+#confirm {
+    margin-top: 12px;
+}
+
+.fields > button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    color: #C0C0C0;
+    border: 3px solid #C0C0C0;
+    box-shadow: 0px 0px 2px 0px gray;
+    padding: 10px;
+    width: 335px;
+    border-radius: 10px;
+    margin: 40px auto 40px auto;
+
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: rgba(131, 163, 176);
+    border: 3px solid rgba(131, 163, 176);
+}
+
+.login {
+    font-weight: 800;
+}
+
+.txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3B3C36;
+    letter-spacing: 2px;
+
+
+    position: absolute;
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+
+    padding: 20px 145px 20px 145px;
+}
+
+a {
+    list-style: none;
+    color: rgba(131, 163, 176);
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}

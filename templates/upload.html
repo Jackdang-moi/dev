@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/upload.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="../static//JS/upload.js"></script>
+    <title>업로드 페이지</title>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <main>
+        <div class="upload_container">
+          <div class="logo">
+            <h2>잡담모의</h2>
+          </div>
+          <form action="">
+            <div class="img_container upload">
+              <label class="img_label" for="upload_btn">
+                <img id="img_view" class="upload_img_container" src="" alt="" />
+                <span id="img_text">사진을 클릭해주세요.</span>
+              </label>
+              <input
+                id="upload_btn"
+                accept=".jpg,.png"
+                type="file"
+                hidden=""
+                onchange="handleImg(this)"
+              />
+              <span class="guide_message"
+                >이미지 사이즈는 1280*720 사이즈를 맞춰서 올려주시면
+                좋아요!</span
+              >
+            </div>
+
+            <div class="input_field_conatiner">
+              <input
+                id="upload_title"
+                type="text"
+                placeholder="제목을 작성해주세요"
+                maxlength="20"
+                autocomplete="off"
+              />
+              <textarea
+                id="upload_textarea"
+                name=""
+                cols="30"
+                rows="10"
+                placeholder="글을 작성해주세요"
+              ></textarea>
+              <div class="submit_btn_conatiner">
+                <button class="submit_btn" type="button" onclick="send()">
+                  업로드
+                </button>
+                <button
+                  class="submit_btn"
+                  type="button"
+                  onclick="window.location.href='/'"
+                >
+                  돌아가기
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

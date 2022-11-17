@@ -1,0 +1,182 @@
+:root {
+  --text-color: #fff;
+  --board-border-color: #d8d9d7;
+  --board-content-color: #3b3c36;
+}
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco 600";
+  font-weight: 600;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff");
+}
+/** Regular */
+@font-face {
+  font-family: "San Francisco 400";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+body {
+  background: rgb(228 226 214);
+}
+* {
+  color: var(--text-color);
+}
+#wrap {
+  display: flex;
+  position: relative;
+}
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: rgba(198, 211, 213);
+  border-right: 0.1px solid #fff;
+  position: fixed;
+  left: 0;
+}
+
+.header > h1 {
+  font-size: 2rem;
+  font-weight: 800;
+
+  height: 100px;
+
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-left: 250px;
+}
+
+.card > ul > li {
+  list-style-type: none;
+  display: inline-block;
+  border-radius: 7px;
+  background: #fdfdfd;
+  overflow: hidden;
+  box-shadow: 0 0 14px -2px rgb(0 0 0 / 30%);
+  border: 1px solid var(--board-border-color);
+}
+
+.btn {
+  padding: 10px 30px 10px 30px;
+
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: beige;
+}
+btn:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+.image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card_inner {
+  grid-template-columns: 1fr;
+  display: grid;
+  width: 100%;
+  gap: 50px;
+  max-width: 600px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo h1 a {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #3b3c36;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px 0;
+}
+nav ul li {
+  display: inline-block;
+
+  width: 100%;
+  text-align: center;
+  max-width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+nav ul li a {
+  color: #3b3c36;
+  /*font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";*/
+  font-family: 'Black Han Sans', sans-serif;
+}
+.content_container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  gap: 15px 0;
+  font-family: "San Francisco 600";
+  align-items: flex-start;
+}
+.content_container .description {
+  color: var(--board-content-color);
+  font-size: 13px;
+  text-align: left;
+}
+.description {
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #3b3c36;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-family: "San Francisco 400";
+}
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: #3b3c36;
+}
+.logout_btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+
+  padding: 8px 15px;
+  width: 80px;
+  color: #fff;
+  border: none;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.logout_btn:active {
+  background: #383838;
+}

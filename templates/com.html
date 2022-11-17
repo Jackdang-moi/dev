@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/com.css" />
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="../static/JS/com.js"></script>
+    <title>세상의 모든 잡담</title>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="sidebar">
+        <div class="logo">
+          <h1><a href="/"> 잡담모의</a></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/api/upload"> 잡담하기 </a></li>
+          </ul>
+        </nav>
+        <button class="logout_btn" type="button" onclick="logout()">
+          로그아웃
+        </button>
+      </div>
+
+      <div class="card" id="card">
+        <ul class="card_inner"></ul>
+      </div>
+    </div>
+  </body>
+</html>

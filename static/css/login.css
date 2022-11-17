@@ -1,0 +1,110 @@
+body {
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #3b3c36;
+  min-height: 100vh;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+  cursor: pointer;
+}
+
+header > h2 {
+  font-weight: 400;
+  text-align: center;
+  margin: 100px auto 40px auto;
+  margin-bottom: -20px;
+  font-size: 30px;
+}
+
+header > h1 {
+  text-align: center;
+  margin: 40px auto 40px auto;
+  font-weight: 800;
+  font-size: 45px;
+}
+
+.user_login {
+  width: 95%;
+  max-width: 500px;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+}
+
+.border_radius15 {
+  border-radius: 15px;
+}
+
+.border_radius20 {
+  border-radius: 15px;
+}
+
+.border_radius30 {
+  border-radius: 15px;
+}
+
+.signuptext {
+  font-weight: 800;
+}
+
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 1em 7em;
+  position: relative;
+  text-transform: uppercase;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: rgba(131, 163, 176);
+  border: 3px solid rgba(131, 163, 176);
+  border-radius: 5px;
+}
+
+.btn-3::after {
+  height: 0;
+  left: 50%;
+  top: 50%;
+  width: 0;
+}
+
+.btn-3:hover:after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.signuptext_area {
+  margin: 0 auto;
+}
