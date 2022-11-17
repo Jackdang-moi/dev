@@ -1,22 +1,21 @@
-
-.img {
-    position: relative;
-    height: 100vh;
-    background-size: cover;
-    width: 90%;
-    margin-left: 160px;
+body {
+    background-color: rgba(221, 222, 224);
+    background-image: url("../img/bubble.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: right 25% bottom 120%;
 }
 
 hr {
-    width: 75%;
+    width: 90%;
+    border-style:solid;
+    border-color: white;
+    border-width: 1px 0px 0px px;
 }
 
 .back {
     color: #3B3C36;
-
-    border: 1px solid #323232;
     width: 500px;
-    border-radius: 5px;
 
     position: absolute;
     top: 40%;
@@ -52,9 +51,10 @@ hr {
 
 .fields > p > input {
     padding: 15px;
-    width: 220px;
+    width: 300px;
     border-radius: 10px;
-    border: 1px solid #323232;
+    border: none;
+    box-shadow: 0px 0px 5px 0px gray;
     margin: 10px auto 10px auto;
 }
 
@@ -68,13 +68,14 @@ hr {
     justify-content: center;
     align-items: center;
 
-    background-color: #414A4C;
-    color: whitesmoke;
-    border: 1px solid #808080;
+    background-color: transparent;
+    color: #C0C0C0;
+    border: 3px solid #C0C0C0;
+    box-shadow: 0px 0px 2px 0px gray;
     padding: 10px;
-    width: 255px;
+    width: 335px;
     border-radius: 10px;
-    margin: 40px auto 20px auto;
+    margin: 40px auto 40px auto;
 
     font-weight: 800;
     font-size: 1.2rem;
@@ -83,6 +84,9 @@ hr {
 
 button:hover {
     cursor: pointer;
+    background-color: transparent;
+    color: rgba(131, 163, 176);
+    border: 3px solid rgba(131, 163, 176);
 }
 
 .login {
@@ -97,8 +101,6 @@ button:hover {
     color: #3B3C36;
     letter-spacing: 2px;
 
-    border: 1px solid #323232;
-    border-radius: 5px;
 
     position: absolute;
     top: 74%;
@@ -112,7 +114,7 @@ button:hover {
 
 a {
     list-style: none;
-    color: #15e868;
+    color: rgba(131, 163, 176);
     text-decoration: none;
 }
 
