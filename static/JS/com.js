@@ -8,6 +8,7 @@ function listing() {
     url: "/detail",
     data: {},
     success: function (response) {
+      console.log(response)
       let rows = response["data"];
       for (let i = 0; i < rows.length; i++) {
         let image = rows[i]["img"];

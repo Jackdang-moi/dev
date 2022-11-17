@@ -10,7 +10,7 @@ ca=certifi.where()
 
 # ================================================================================
 # db주소는 kjy
-client = MongoClient('mongodb+srv://test:sparta@cluster0.itbv7ku.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:sparta@cluster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
 
 # ================================================================================
 db = client.dbsparta
@@ -28,6 +28,8 @@ import datetime
 # 회원가입 시엔, 비밀번호를 암호화하여 DB에 저장해두는 게 좋습니다.
 # 그렇지 않으면, 개발자(=나)가 회원들의 비밀번호를 볼 수 있으니까요.^^;
 import hashlib
+
+
 
 
 #################################
@@ -65,7 +67,8 @@ def get_path_detail(path):
 @app.route("/detail", methods=['GET'])
 def upload_get():
     upload_data = list(db.upload.find({}, {'_id': False}))
-    return jsonify({'data': upload_data})
+    comment_data = list(db.comment.find({}, {'_id': False}))
+    return jsonify({'data': upload_data,'comment': comment_data, })
 
 
 @app.route("/api/upload", methods=['POST'])
@@ -83,10 +86,16 @@ def send_data():
 
 
 @app.route('/detail/<path>', methods=['POST'])
-def send_comment():
-    comment_description = request.form['comment_description']
-    
-    db.upload.insert_one({'description' : comment_description})
+def send_comment(path):
+    path = request.form['give_path']
+    comment = request.form['comment_description']
+    token_receive = request.cookies.get('mytoken')
+    payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    user_info = db.user.find_one({"id": payload['id']})
+    nick_name = user_info['nick']
+
+    db.comment.insert_one({'order': path,'comment': comment, 'nick': nick_name})
+
     return jsonify({'result': 'SUCCESS'})
 
 
