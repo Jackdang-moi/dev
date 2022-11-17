@@ -10,7 +10,7 @@
 }
 #wrap main {
   padding: 30px;
-  background: #0c0c0c;
+  background: rgb(215, 216, 218);
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -22,20 +22,19 @@
   margin: 30px 20px;
 }
 .logo h2 {
-  color: #fff;
+  color: #3b3c36;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .upload_container {
   display: flex;
-  background: #171616;
+  background: rgb(192, 204, 206);
   max-width: 700px;
   width: 100%;
   justify-content: flex-start;
   flex-direction: column;
-  border: 0.1px solid #606060;
-  border-radius: 10px;
+  box-shadow: 0 0 12px 2px rgb(0 0 0 / 12%);
   border-radius: 10px;
   padding: 40px;
   box-sizing: border-box;
@@ -46,10 +45,11 @@
   justify-content: center;
   height: inherit;
   box-shadow: 1px 2px 5px 0px rgb(0 0 0 / 30%);
-  border: 1px solid #606060;
+  border: 1px solid #9f9e9e;
   border-radius: 5px;
   cursor: pointer;
   min-height: 230px;
+  background-color: #e5e3e3;
 }
 .upload_container form {
   width: 100%;
@@ -76,7 +76,7 @@
   display: none;
 }
 #img_text {
-  color: #b1b1b1;
+  color: #939393;
 }
 .input_field_conatiner {
   display: flex;
