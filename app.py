@@ -10,7 +10,7 @@ ca=certifi.where()
 
 # ================================================================================
 # db주소는 kjy
-client = MongoClient('mongodb+srv://test:sparta@cluster0.hqmjigh.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:sparta@cluster0.itbv7ku.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 
 # ================================================================================
 db = client.dbsparta

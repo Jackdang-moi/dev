@@ -10,22 +10,13 @@ function handleUpload() {
     url: "/detail",
     data: {},
     success: function (res) {
-    console.log(res)
+      console.log(res);
       res.data.map((data) => {
         if (page_num == data.order) {
-
           let title = data.title;
           let img = data.img;
 
           let description = data.description;
-           let nick;
-           let comment;
-          res.comment.map(data=>{
-             nick = data.nick;
-             comment = data.comment;
-          })
-
-
 
           html = `
                         <div class="img_container">
@@ -48,10 +39,10 @@ function handleUpload() {
                         </div>
                       </div>
                        <div id="commentList_container">
-                            <span class="reple_comment">
-                                <span class="reple_user">${nick}</span>
-                                <div class="reple_content">${comment}</div>     
-                            </span>
+                            <div class="comment_inner">
+                          
+                             </div>
+                            
                         </div>
                       <div class="submit_btn_conatiner">
                                   <button class="submit_btn" type="button" onclick=window.location.href="/">돌아가기</button>
@@ -60,6 +51,19 @@ function handleUpload() {
 
           let upload_container = document.getElementById("upload_form");
           upload_container.insertAdjacentHTML("beforeend", html);
+          let nick;
+          let comment;
+          res.comment.map((data) => {
+            nick = data.nick;
+            comment = data.comment;
+            let html = `
+            <span class="reple_comment_container">
+            <span class="reple_user">${nick}</span>
+            <div class="reple_content">${comment}</div>     
+            </span>
+            `;
+            $(".comment_inner").append(html);
+          });
         }
       });
     },
@@ -73,9 +77,9 @@ function comment_upload() {
   $.ajax({
     type: "POST",
     url: `${path}`,
-    data: { comment_description: comment ,give_path:path},
+    data: { comment_description: comment, give_path: path },
     success: function (res) {
-       window.location.href = path;
+      window.location.href = path;
     },
   });
 }

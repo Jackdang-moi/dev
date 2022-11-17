@@ -166,12 +166,23 @@ body::-webkit-scrollbar {
 #commentList_container {
   width: 100%;
 }
-.reple_comment {
+.reple_comment_container {
   display: flex;
   flex-direction: column;
   gap: 10px 0;
   color: #fff;
+  padding: 11px;
+  background: #2b2a2a;
+  border-radius: 5px;
 }
 
-.reple_user {
+.comment_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.reple_content {
+  line-height: 19px;
+  font-size: 13px;
 }
